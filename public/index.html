@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Node.js 22 trên Azure</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Ứng dụng Node.js 22 trên Azure App Services</h1>
+  <p>Xin chào! Đây là trang test triển khai Node.js 22 lên Azure.</p>
+  <p><a href="/api">Kiểm tra API</a></p>
+  <div id="node-version"></div>
+  
+  <script>
+    // Lấy thông tin từ API
+    fetch('/api')
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('node-version').innerHTML = 
+          `Phiên bản Node.js: ${data.nodeVersion}`;
+      });
+  </script>
+</body>
+</html>
